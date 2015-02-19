@@ -475,6 +475,12 @@
 				<command>playerctl next</command>
 			</action>
 		</keybind>
+		<!-- lock screen -->
+		<keybind key="C-A-l">
+			<action name="Execute">
+				<command>i3lock -d -c 000000</command>
+			</action>
+		</keybind>
 	</keyboard>
 	<mouse>
 		<dragThreshold>1</dragThreshold>

@@ -23,3 +23,4 @@ volti &
 nm-applet &
 (sleep 10 && dropboxd) &
 ~/.conky-startup.sh &
+xss-lock -- i3lock -d -c 000000 &
