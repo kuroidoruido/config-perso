@@ -1,0 +1,70 @@
+# Conky settings #
+background yes
+update_interval 2
+double_buffer yes
+no_buffers yes
+imlib_cache_size 10
+
+# Window specifications #
+gap_x 68
+gap_y 140
+minimum_size 200 50
+maximum_width 0
+own_window yes
+own_window_type desktop # other options are : override/dock/desktop/panel
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+alignment top_right
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+
+# Graphics settings #
+draw_shades no
+default_shade_color AAAAAA
+draw_outline no
+default_outline_color AAAAAA
+draw_borders no
+
+# Text settings #
+use_xft yes
+xftalpha 0
+xftfont Droid Sans:size=10
+text_buffer_size 256
+override_utf8_locale yes
+
+# Color scheme #
+default_color FFFFFF
+color1 A0A0A0
+color2 FFFFFF
+
+
+TEXT
+# Workspace indicator
+${font size=20}\
+${alignc}${if_match $desktop!=1}${color1}${endif}• ${color}\
+${if_match $desktop!=2}${color1}${endif}• ${color}\
+${if_match $desktop!=3}${color1}${endif}• ${color}\
+${font}
+# Network
+${alignc}${execi 60 ip a | grep "inet " | grep -v "127.0.0.1" | tr '/' ' ' | awk '{print $2}'}
+# Pacman
+${alignc}${execi 1 checkupdates | wc -l} mise-à-jour disponible
+
+# Temperature
+${alignc}Temperature ${execi 1 acpi -t | awk "{print \$4}"}°C
+
+# CPU average
+${alignc}CPU
+${cpubar cpu1 6,170} ${cpu cpu1}%
+${cpubar cpu2 6,170} ${cpu cpu2}%
+${cpubar cpu3 6,170} ${cpu cpu3}%
+${cpubar cpu4 6,170} ${cpu cpu4}%
+# RAM
+${alignc}RAM
+${alignc}${color 00FF00}${memeasyfree}${color}\
+ / ${color FF7050}${mem}${color}\
+ / ${memmax}
+${membar 6,170} ${memperc}%
