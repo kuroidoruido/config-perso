@@ -7,7 +7,7 @@ imlib_cache_size 10
 
 # Window specifications #
 gap_x 68
-gap_y 140
+gap_y 60
 minimum_size 200 50
 maximum_width 0
 own_window yes
@@ -40,6 +40,7 @@ default_color FFFFFF
 color1 A0A0A0
 color2 FFFFFF
 
+default_bar_size 170 6
 
 TEXT
 # Workspace indicator
@@ -48,8 +49,10 @@ ${alignc}${if_match $desktop!=1}${color1}${endif}• ${color}\
 ${if_match $desktop!=2}${color1}${endif}• ${color}\
 ${if_match $desktop!=3}${color1}${endif}• ${color}\
 ${font}
+
 # Network
-${alignc}${execi 60 ip a | grep "inet " | grep -v "127.0.0.1" | tr '/' ' ' | awk '{print $2}'}
+${alignc}wlp2s0 ${execi 60 ip a | grep "wlp2s0" | grep "inet" | tr '/' ' ' | awk '{print $2}'}
+${alignc}enp0s20u3 ${execi 60 ip a | grep "enp0s20u3" | grep "inet" | tr '/' ' ' | awk '{print $2}'}
 # Pacman
 ${alignc}${execi 1 checkupdates | wc -l} mise-à-jour disponible
 
@@ -64,7 +67,16 @@ ${cpubar cpu3 6,170} ${cpu cpu3}%
 ${cpubar cpu4 6,170} ${cpu cpu4}%
 # RAM
 ${alignc}RAM
-${alignc}${color 00FF00}${memeasyfree}${color}\
- / ${color FF7050}${mem}${color}\
+${alignc}${color 37EA4A}${memeasyfree}${color}\
+ / ${color D40606}${mem}${color}\
  / ${memmax}
 ${membar 6,170} ${memperc}%
+
+# Volume
+${alignc}Volume
+${execibar 1 amixer get Master pvolume | tail -n 1 | awk '{print $5}' | tr -d '[]%'}\
+ ${exec amixer get Master pvolume | tail -n 1 | awk '{print $5}' | tr -d '[]'}
+# Backlight
+${alignc}Backlight
+${execibar 1 xbacklight}\
+ ${execi 1 xbacklight | awk '{print int($1+0.5)}'}%

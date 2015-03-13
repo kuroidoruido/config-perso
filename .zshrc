@@ -20,7 +20,6 @@ autoload -U promptinit
 promptinit
 prompt redhat
 
-#alias ls=ls --color
 source ~/.zsh_aliases
 
 function enable_proxy() {
@@ -45,8 +44,8 @@ function disable_proxy() {
 	export ftp_proxy=""
 }
 
-export GUROBI_HOME="/home/anthony/.gurobi600/linux64"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+#export GUROBI_HOME="/home/anthony/.gurobi600/linux64"
+#export PATH="${PATH}:${GUROBI_HOME}/bin"
+#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 
 export K49_TORRENT="k49@k49.fr.nf:~/download/torrent"

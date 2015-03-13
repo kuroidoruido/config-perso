@@ -7,7 +7,7 @@ imlib_cache_size 10
 
 # Window specifications #
 gap_x 30
-gap_y 20
+gap_y 0
 minimum_size 268 390
 maximum_width 268
 own_window yes
