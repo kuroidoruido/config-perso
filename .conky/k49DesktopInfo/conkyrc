@@ -74,8 +74,8 @@ ${membar 6,170} ${memperc}%
 
 # Volume
 ${alignc}Volume
-${execibar 1 amixer get Master pvolume | tail -n 1 | awk '{print $5}' | tr -d '[]%'}\
- ${exec amixer get Master pvolume | tail -n 1 | awk '{print $5}' | tr -d '[]'}
+${execibar 1 amixer get Master pvolume | tail -n 1 | tr ' ' '\n' | grep '%' | tr -d '[]%'}\
+ ${exec amixer get Master pvolume | tail -n 1 | tr ' ' '\n' | grep '%' | tr -d '[]'}
 # Backlight
 ${alignc}Backlight
 ${execibar 1 xbacklight}\

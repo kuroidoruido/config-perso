@@ -37,11 +37,6 @@
 		</item>
 	</menu>
 	<menu id="apps-dev-menu" label="Development">
-		<item label="Eclipse">
-			<action name="Execute">
-				<command>~/.eclipse.sh</command>
-			</action>
-		</item>
 		<item label="Geany">
 			<action name="Execute">
 				<command>geany</command>
@@ -49,7 +44,7 @@
 		</item>
 		<item label="Meld">
 			<action name="Execute">
-				<command>~/.meld.sh</command>
+				<command>meld</command>
 			</action>
 		</item>
 		<item label="Nemiver">
@@ -126,7 +121,7 @@
 		</item>
 		<item label="LibreOffice Writer">
 			<action name="Execute">
-				<command>ooffice -writer</command>
+				<command>loffice -writer</command>
 			</action>
 		</item>
 	</menu>
@@ -170,17 +165,17 @@
 				<command>pitivi</command>
 			</action>
 		</item>
-		<item label="Rhythmbox">
-			<action name="Execute">
-				<command>rhythmbox</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
 		<item label="SoundConverter">
 			<action name="Execute">
 				<command>soundconverter</command>
+			</action>
+		</item>
+		<item label="Yarock">
+			<action name="Execute">
+				<command>yarock</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
 			</action>
 		</item>
 	</menu>

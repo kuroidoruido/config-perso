@@ -24,4 +24,4 @@ nm-applet &
 ~/.conky-startup.sh &
 xss-lock -- i3lock -d -c 000000 &
 unclutter -idle 1 &
-(sh -c "sleep 10 && dropboxd") &
+#(sh -c "sleep 10 && dropbox") &

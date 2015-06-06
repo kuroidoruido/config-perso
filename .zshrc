@@ -15,6 +15,8 @@ SAVEHIST=10000
 setopt autocd extendedglob notify
 unsetopt beep
 bindkey -e
+bindkey    "^[[3~"          delete-char
+bindkey    "^[3;5~"         delete-char
 # End of lines configured by zsh-newuser-install
 autoload -U promptinit
 promptinit
@@ -44,8 +46,6 @@ function disable_proxy() {
 	export ftp_proxy=""
 }
 
-#export GUROBI_HOME="/home/anthony/.gurobi600/linux64"
-#export PATH="${PATH}:${GUROBI_HOME}/bin"
-#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-
-export K49_TORRENT="k49@k49.fr.nf:~/download/torrent"
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/
+export QT_STYLE_OVERRIDE=gtk

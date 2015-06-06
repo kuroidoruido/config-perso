@@ -1,7 +1,3 @@
 alias ls="ls --color"
 alias dmenu="dmenu_recent_aliases"
-alias eclipse="~/.eclipse.sh"
-alias firefox="~/.firefox.sh"
-alias meld="~/.meld.sh"
 alias jdotxt="java -jar ~/.jdotxt/jdotxt.jar"
-alias todo="grep -Rn \"TODO\""
