@@ -24,15 +24,17 @@ prompt redhat
 
 source ~/.zsh_aliases
 
+export EDITOR=nano
+
 function enable_proxy() {
 	export HTTP_PROXY="http://cache.wifi.univ-nantes.fr:3128"
 	export HTTPS_PROXY="http://cache.wifi.univ-nantes.fr:3128"
 	export http_proxy="http://cache.wifi.univ-nantes.fr:3128"
 	export https_proxy="http://cache.wifi.univ-nantes.fr:3128"
-	export ALL_PROXY="http://cache.wifi.univ-nantes.fr:3128"
-	export all_proxy="http://cache.wifi.univ-nantes.fr:3128"
 	export FTP_PROXY="http://cache.wifi.univ-nantes.fr:3128"
 	export ftp_proxy="http://cache.wifi.univ-nantes.fr:3128"
+	export ALL_PROXY="http://cache.wifi.univ-nantes.fr:3128"
+	export all_proxy="http://cache.wifi.univ-nantes.fr:3128"
 }
 
 function disable_proxy() {
@@ -40,12 +42,16 @@ function disable_proxy() {
 	export HTTPS_PROXY=""
 	export http_proxy=""
 	export https_proxy=""
-	export ALL_PROXY=""
-	export all_proxy=""
 	export FTP_PROXY=""
 	export ftp_proxy=""
+	export ALL_PROXY=""
+	export all_proxy=""
 }
 
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/
 export QT_STYLE_OVERRIDE=gtk
+
+function bastion_k49() {
+	ssh -f -N -L:10022:k49.fr.nf:22 e114797e@bastion.etu.univ-nantes.fr
+}

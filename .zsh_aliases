@@ -1,3 +1,7 @@
 alias ls="ls --color"
 alias dmenu="dmenu_recent_aliases"
 alias jdotxt="java -jar ~/.jdotxt/jdotxt.jar"
+alias wow="wine /run/media/anthony/home/WoWParagon3.3.5a/World\ of\ Warcraft/Wow.exe"
+alias mia-studio="/run/media/anthony/home/Alma2015/Installateurs/Mia-Studio9.2.0.alpha/packages/eclipse/Mia-Studio"
+
+alias go-loki="~/Documents/Master/Semestre\ 3\ \(M2\)/Middleware/Projet/loki"

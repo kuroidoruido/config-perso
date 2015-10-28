@@ -365,12 +365,12 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>nautilus</command>
+        <command>nemo --no-desktop</command>
       </action>
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-        <command>nautilus ~/Documents/</command>
+        <command>nemo ~/Documents/</command>
       </action>
     </keybind>
     <keybind key="W-r">
